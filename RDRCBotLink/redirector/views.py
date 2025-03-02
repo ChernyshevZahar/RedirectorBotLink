@@ -23,3 +23,15 @@ def get_link(request, id):
 
 
     return redirect(f"{linkbase_instance.getlink}?start={utm_instance.unicKye}")
+
+
+def get_urls(request):
+    """
+    Представление, перенаправляющее пользователя по unicKey.
+    """
+    try:
+        utm_instance = utmBase.objects.get(unicKye=request.GET.get('key'))
+        links = utm_instance.linkbase.all()
+    except utmBase.DoesNotExist:
+        return HttpResponseNotFound("Ссылка не найдена")
+    return  redirect(f'{links.first().postLink}?{utm_instance.utms}')
