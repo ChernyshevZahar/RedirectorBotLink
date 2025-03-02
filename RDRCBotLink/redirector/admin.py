@@ -7,6 +7,6 @@ class LinkBase(admin.ModelAdmin):
 
 @admin.register(utmBase)
 class utmBase(admin.ModelAdmin):
-    list_display  = ['unicKye','utms','linkbase',]
+    list_display  = ['unicKye','utms',]
 
 
