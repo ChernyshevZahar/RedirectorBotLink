@@ -3,4 +3,4 @@ from django.contrib import admin
 from .models import LinkBase
 @admin.register(LinkBase)
 class LinkBase(admin.ModelAdmin):
-    inlines = ['name',]
+    list_display  = ['name',]
