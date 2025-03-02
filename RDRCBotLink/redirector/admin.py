@@ -5,7 +5,7 @@ from .models import LinkBase , utmBase
 class LinkBase(admin.ModelAdmin):
     list_display  = ['name',]
 
-@admin.register(LinkBase)
+@admin.register(utmBase)
 class utmBase(admin.ModelAdmin):
     list_display  = ['unicKye','utms','linkbase',]
 
